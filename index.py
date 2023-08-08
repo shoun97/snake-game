@@ -11,6 +11,7 @@ pygame.display.set_caption("Snake Game")
 blanco = (255, 255, 255)
 verde = (0, 255, 0)
 rojo = (255, 0, 0)
+negro = (0, 0, 0)
 
 posicion_snake = [100, 50]
 cuerpo_snake = [[100, 50]]
@@ -76,9 +77,9 @@ while True:
     if len(cuerpo_snake) > tamano_serpiente:
         cuerpo_snake.pop()
 
-    pantalla.fill(blanco)
+    pantalla.fill(negro)
     for segmento in cuerpo_snake:
-        pygame.draw.rect(pantalla, verde, pygame.Rect(
+        pygame.draw.rect(pantalla, blanco, pygame.Rect(
             segmento[0], segmento[1], 10, 10))
     pygame.draw.rect(pantalla, rojo, pygame.Rect(
         comida_pos[0], comida_pos[1], 10, 10))
